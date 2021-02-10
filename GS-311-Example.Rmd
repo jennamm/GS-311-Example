@@ -1,0 +1,48 @@
+---
+title: "G&S 3.11 Example Completion"
+author: "Jenna Moscaritolo"
+date: "2/10/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Example 3.11 in Textbook
+
+This is the method and code behind example 3.11.
+
+```{r}
+options(digits = 4, scipen = 999)
+
+# p = 60% for null hypothesis
+# p > 60% for alternate hypothesis
+p <- dbinom(5, 10, 0.3)
+p
+
+
+d <- dbinom(0:10, 10, 0.3)
+round(d, digits = 4)
+plot(d)
+cumsum(d)
+
+
+pb <- pbinom(0:10, 10, 0.3)
+pb
+
+
+q <- qbinom(d, 10, 0.3)
+q
+
+
+r <- rbinom(10000, 10, 0.3)
+hist(r)
+
+
+r2 <- as.data.frame(r)
+dim(r2)
+plot <- ggplot(r2, aes(x = r))
+plot + geom_histogram()
+```
