@@ -1,5 +1,8 @@
 # GS-311-Example
 
+This example is for the GRSMA677 class.
+
+
 The probability of the old asprin curing headaches is 60%.
 The probability of the new asprin curing headaches is greater than 60%.
 
